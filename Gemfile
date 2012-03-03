@@ -17,14 +17,15 @@ gem 'dynamic_form'
 
 gem 'jquery-rails'
 
-group :development do
-  gem 'rainbow'
-  gem 'highline',     :require => false
-  gem 'faker',        :require => false
-  gem 'rubyzip',      :require => false
+gem 'rainbow'
+gem 'highline',     :require => false
+gem 'faker',        :require => false
+gem 'rubyzip',      :require => false
 
+gem 'whenever'
+
+group :development do
   gem 'capistrano'
-  gem 'whenever'
 end
 
 group :test do
