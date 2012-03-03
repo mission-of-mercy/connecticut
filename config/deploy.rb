@@ -36,3 +36,5 @@ end
 
 after "deploy", "deploy:migrate"
 after "deploy", "deploy:cleanup"
+
+load 'deploy/assets'
