@@ -22,6 +22,9 @@ group :development do
   gem 'highline',     :require => false
   gem 'faker',        :require => false
   gem 'rubyzip',      :require => false
+
+  gem 'capistrano'
+  gem 'whenever'
 end
 
 group :test do
