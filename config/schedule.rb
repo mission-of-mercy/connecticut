@@ -1,20 +1,8 @@
-# Use this file to easily define all of your cron jobs.
-#
-# It's helpful, but not entirely necessary to understand cron before proceeding.
-# http://en.wikipedia.org/wiki/Cron
+set :output, "/home/deploy/mom/current/log/cron_log.log"
 
-# Example:
-#
-# set :output, "/path/to/my/cron_log.log"
-#
-# every 2.hours do
-#   command "/usr/bin/some_great_command"
-#   runner "MyModel.some_method"
-#   rake "some:great:rake:task"
-# end
-#
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
+every 15.minutes do
+  db_config  = YAML.load_file("#{Dir.pwd}/config/database.yml")["production"]
+  mom_config = YAML.load_file("#{Dir.pwd}/config/mom.yml")
 
-# Learn more: http://github.com/javan/whenever
+  command %{PGPASSWORD=#{db_config["password"]} pg_dump -i -h #{db_config["host"]} -U #{db_config["username"]} -F c -f "#{mom_config["backup_path"]}`date \\+\\%m_\\%d_\\%Y_\\%H_\\%M`.backup" #{db_config["database"]}}
+end
