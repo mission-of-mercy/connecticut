@@ -16,7 +16,7 @@ class PatientsController < ApplicationController
     @area ||= session[:treatment_area_id] if session[:treatment_area_id]
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.js { render :layout => false }
     end
   end

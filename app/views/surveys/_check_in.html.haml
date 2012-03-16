@@ -19,22 +19,26 @@
       = s.radio_button :has_place_to_be_seen_for_dental_care, false
       = s.label :has_place_to_be_seen_for_dental_care, "No", :value => false
   %p
-    What, if any, insurance do you have to pay for dental care? (Check all that apply)<br/>
+    Do you have Charter Oak medical insurance?
+    %br
+    .input
+      = s.radio_button :charter_oak, true
+      = s.label :charter_oak, "Yes", :value => true
+      = s.radio_button :charter_oak, false
+      = s.label :charter_oak, "No", :value => false
+  %p
+    What, if any, insurance do you have to pay for dental care? (Check all that apply)
+    %br
     .input
       = s.check_box :no_insurance
       = s.label :no_insurance
       %br
       = s.check_box :insurance_from_job
       = s.label :insurance_from_job
-      %br
-      = s.check_box :husky_insurance
-      = s.label :husky_insurance, "Husky"
-      %br
-      = s.check_box :medicaid_or_chp_plus
-      = s.label :medicaid_or_chp_plus, "Medicaid or CHP+"
-      %br
-      = s.check_box :saga_insurance
-      = s.label :saga_insurance, "Saga"
+      - %w{a b c d unknown}.each do |husky_type|
+        %br
+        = s.check_box "husky_insurance_#{husky_type}"
+        = s.label "husky_insurance_#{husky_type}", "Husky #{husky_type.capitalize}"
       %br
       = s.check_box :self_purchase_insurance
       = s.label :self_purchase_insurance, "Insurance purchased by myself"
