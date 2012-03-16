@@ -219,8 +219,9 @@ class Reports::PostClinic
   def load_insurance
     @insurances = []
 
-    ["no_insurance", "insurance_from_job", "medicaid_or_chp_plus",
-     "self_purchase_insurance", "other_insurance"].each do |i|
+    %w{husky_insurance_a husky_insurance_b husky_insurance_c husky_insurance_d
+    husky_insurance_unknown charter_oak no_insurance insurance_from_job
+    self_purchase_insurance other_insurance}.each do |i|
       add_insurance i
     end
 
