@@ -15,7 +15,7 @@ set :use_sudo, false
 server "mom.integrityss.com", :app, :web, :db, :primary => true
 
 task :local do
-  set :repository, %w(/Users/byron/code/personal/ct_mission_of_mercy)
+  set :repository, %(/Users/byron/code/personal/ct_mission_of_mercy)
   set :deploy_via, :copy
   set :copy_exclude, [".git"]
 end
