@@ -9,12 +9,3 @@ $('#patients').text(<%= @patients %>);
 <% else %>
   $(document.body).removeClass('red');
 <% end %>
-
-// TODO: Clean up this code
-
-var serverTime = new Date(Number(<%= @server_time.to_i %>) * 1000);
-var diff       = Math.abs(serverTime - Date.now());
-
-if(diff > 600) alert("Server Time Off!");
-
-$('span.server-time').text('<%= @server_time.strftime("%D %H:%M") %>');
