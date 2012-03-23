@@ -1,6 +1,8 @@
 - title 'Print'
 
-#header= @patient.id
+#header
+  %span.desc Chart Number:
+  = @patient.id
 
 %table
   %tr

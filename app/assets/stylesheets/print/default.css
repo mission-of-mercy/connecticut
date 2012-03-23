@@ -11,6 +11,11 @@ body{
 	margin-bottom: 20px;
 }
 
+#header span.desc {
+  font-weight: normal;
+  font-size: 24px;
+}
+
 table
 {
 	width: 100%;
