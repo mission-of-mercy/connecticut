@@ -1,6 +1,0 @@
-#flash
-  - flash.each do |flashtype, message|
-    - next if message.blank?
-    .alert{class: "alert-#{flashtype} in fade"}
-      %a{href: "#", class:"close", data: {dismiss:"alert"}} &times;
-      = message

@@ -1,9 +1,0 @@
-- title "#{@treatment_area.name} Checkout"
-
-= header do
-  %h1= "#{@treatment_area.name} Checkout"
-
-- @patients_table.controls do |patient|
-  = link_to_checkout(@treatment_area, patient)
-
-= render "patients/patients"

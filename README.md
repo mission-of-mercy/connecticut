@@ -1,6 +1,7 @@
-# Connecticut Mission of Mercy
+We've Moved
+===========
 
-For details about this project and other's like it, please visit the main project
-page at:
+This repo is now the `connecticut` branch on the main [Mission of Mercy][momma]
+project
 
-<https://github.com/mission-of-mercy/mission-of-mercy>
+[momma]: https://github.com/mission-of-mercy/mission-of-mercy/tree/connecticut
